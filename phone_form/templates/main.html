@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+    <div class="registration-form">
+        <div class="form-group">
+            <label for="inputPhone">Phone Number</label>
+            <input type="tel" class="form-control" id="phoneNumberInput" aria-describedby="telHelp" placeholder="Enter your phone number">
+            <small id="telHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+        </div>
+        <div class="submit-group">
+            <button type="button" class="btn btn-primary" id="searchPhone" onclick="sendPhoneNumber()">Search Phone</button>
+        </div>
+    </div>
+    <div class="userdata-container">
+        <!-- <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Range</th>
+                <th scope="col">Operator</th>
+                <th scope="col">TIN</th>
+                <th scope="col">Region</th>
+                <th scope="col">RegionGAR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>800</td>
+                <td>10000</td>
+                <td>5550000 - 5559999</td>
+                <td>AO "MTT"</td>
+                <td>7705017253</td>
+                <td>London</td>
+                <td>London</td>
+              </tr>
+            </tbody>
+        </table> -->
+    </div>
+{% csrf_token %}
+{% endblock content %}
