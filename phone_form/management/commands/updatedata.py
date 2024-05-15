@@ -1,8 +1,8 @@
 from django.core.management.base import BaseCommand, CommandError
-from phone_form.update_db_task import update_data
+from phone_form.tasks.update_db_task import update_data
 
 class Command(BaseCommand):
-    help = 'Runs the update_data Celery task on startup'
+    help = 'Runs the update_data Celery task'
 
     def handle(self, *args, **options):
         try:

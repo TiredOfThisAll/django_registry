@@ -17,6 +17,8 @@ def get_phone_number_info(request):
         end__gte=phone_number["rest_numbers"],
         start__lte=phone_number["rest_numbers"]
     ).first()
+    if not info:
+        return JsonResponse({"error": "Incorrect phone number"})
     phone_number_info = {
         "abc": info.abc,
         "start": info.start,

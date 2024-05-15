@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from celery.schedules import crontab
-import phone_form.update_db_task
+import phone_form.tasks.update_db_task
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -134,7 +134,7 @@ CELERY_RESULT_BACKEND = "redis://localhost:6379"
 
 CELERY_BEAT_SCHEDULE = {
     "rebuild_db_task": {
-        "task": "phone_form.update_db_task.update_data",
+        "task": "phone_form.tasks.update_db_task.update_data",
         "schedule": crontab(hour="*/24"),
     },
 }

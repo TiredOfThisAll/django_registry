@@ -1,6 +1,6 @@
 from celery import shared_task
-from phone_form.repository import import_csv_data, truncate_table
-from .update_data import get_download_links, download_file
+from phone_form.data_access.repository import import_csv_data, truncate_table
+from ..update_data import get_download_links, download_file
 import os
 from celery.utils.log import get_task_logger
 
